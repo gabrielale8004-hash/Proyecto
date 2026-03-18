@@ -1,5 +1,7 @@
 # Proyecto
 
+Este proyecto es para aprender sobre el curso de programacion web en el instituto alfa
+
 ```sh
 npm create astro@latest -- --template basics
 ```
