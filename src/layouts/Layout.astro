@@ -9,22 +9,30 @@
 		<title>Tesk Suministros</title>
 	</head>
 	<body>
-
 		<header>
+			<header>
+				<p>Tesk Suministros</p>
 
-<a href="/">home</a>
-<a href="/products">products</a>
-<a href="/contacts">contacts</a>
+				<div>
+					<a href="/contacts">Contactos</a>
+					<a href="/products">productos</a>
+				</div>
 
-		<slot />
+				<div>
+					<button>iniciar sesion</button>
+				</div>
+			</header>
+
+			<slot />
+		</header>
 	</body>
-</html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+	<style>
+		html,
+		body {
+			margin: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</html>
