@@ -1,13 +1,47 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
-	<Welcome />
-</Layout>
+	<section>
+		<p>expertos industriales</p>
+		<div>
+			<p>Especialistas en Tornillería y Herramienta</p>
+			<p>
+				Precisión de grado industrial para proyectos que requieren
+				resistencia absoluta. Suministros certificados para ingeniería y
+				construcción.
+			</p>
+		</div>
+		<div>
+			<button>explorar catalogo</button>
+			<button>fichas tecnicas</button>
+		</div>
+	</section>
 
-<section><img src="" alt=""></section>
+	<section>
+		<img src="/unnamed.png" alt="" />
+		<div>
+			<p>Certificación ISO</p>
+			<p>
+				Todos nuestros suministros cumplen con los estándares
+				internacionales de seguridad y resistencia mecánica.
+			</p>
+
+			<p>Logística Pesada</p>
+			Entregas directas a obra o planta con flota propia preparada para cargamentos
+			de alto tonelaje.
+
+			<p>
+				Asesoría Técnica<p></p>
+				Ingenieros a su disposición para el cálculo de necesidades de anclaje
+				y torque específico.
+			</p>
+		</div>
+
+		<Icon name="line-md--home-twotone" size={32} />
+
+		<Icon name="eva--car-fill" size={32} />
+	</section>
+</Layout>
