@@ -4,44 +4,60 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
-	<section>
-		<p>expertos industriales</p>
+	<section class="bg-black px-0.5 py-14">
+		<p class="bg-amber-300 px-8 py-8 text-4xl text font-serif">
+			expertos industriales
+		</p>
 		<div>
-			<p>Especialistas en Tornillería y Herramienta</p>
-			<p>
+			<p class="text-4xl px-4 py-4 text-amber-50">
+				Especialistas en Tornillería y Herramienta
+			</p>
+			<p class="text-4x1 px-4 py-1 text-amber-50">
 				Precisión de grado industrial para proyectos que requieren
 				resistencia absoluta. Suministros certificados para ingeniería y
 				construcción.
 			</p>
 		</div>
-		<div>
-			<button>explorar catalogo</button>
-			<button>fichas tecnicas</button>
+		<div class="px-6 py-4">
+			<button class="bg-amber-300 px-3 py-3">explorar catalogo</button>
+			<button class="bg-black px-3 py-3 text-amber-50"
+				>fichas tecnicas</button
+			>
 		</div>
 	</section>
 
 	<section>
-		<img src="/unnamed.png" alt="" />
 		<div>
-			<p>Certificación ISO</p>
-			<p>
-				Todos nuestros suministros cumplen con los estándares
-				internacionales de seguridad y resistencia mecánica.
-			</p>
+			<p class="uppercase text-3xl px-4 py-14">categorias descatacadas</p>
+		</div>
+		<div class="flex justify-between px-10">
+			
+			
+			<p>Certificacion ISO</p>
 
 			<p>Logística Pesada</p>
-			Entregas directas a obra o planta con flota propia preparada para cargamentos
-			de alto tonelaje.
 
 			<p>
 				Asesoría Técnica<p></p>
+
+				<div class="flex justify-between px-4">
+					<p>
+						Todos nuestros suministros cumplen con los estándares
+						internacionales de seguridad y resistencia mecánica.
+					</p>
+
+					Entregas directas a obra o planta con flota propia preparada
+					para cargamentos de alto tonelaje.
+				</div>
 				Ingenieros a su disposición para el cálculo de necesidades de anclaje
 				y torque específico.
 			</p>
 		</div>
 
-		<Icon name="line-md--home-twotone" size={32} />
+		<div>
+			<p class="uppercase text-3xl px-4 py-14">inventario critico</p>
+		</div>
 
-		<Icon name="eva--car-fill" size={32} />
+		<img src="/unnamed.png" alt="" />
 	</section>
 </Layout>
