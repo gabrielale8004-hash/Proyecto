@@ -4,47 +4,73 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
-	<section>
-		<p>expertos industriales</p>
-		<div>
-			<p>Especialistas en Tornillería y Herramienta</p>
-			<p>
-				Precisión de grado industrial para proyectos que requieren
-				resistencia absoluta. Suministros certificados para ingeniería y
-				construcción.
-			</p>
-		</div>
-		<div>
-			<button>explorar catalogo</button>
-			<button>fichas tecnicas</button>
-		</div>
-	</section>
+  <header class="flex bg-[#111] text-white min-h-[580px] w-full pt-24 pb-24">
+    <div class="max-w-[1400px] mx-auto w-full px-40 flex flex-col gap-8">
+      
+      <p class="bg-[#ffcc00] text-black font-bold text-base w-fit px-6 py-1.5 uppercase tracking-wider">
+        expertos industriales
+      </p>
 
-	<section>
-		<img src="/bota.jpeg" alt="bota industrial" />
-		<img src="/llave.jpeg" alt="llave inglesa" />
-		<img src="/unnamed.png" alt="sierra" />
+      <h1 class="text-7xl font-bold italic leading-[1.05] uppercase">
+        ESPECIALISTAS EN <br />
+        <span class="text-[#ffcc00]">TORNILLERÍA</span> <br />
+        Y HERRAMIENTAS
+      </h1>
 
-		<div>
-			<p>Certificación ISO</p>
-			<p>
-				Todos nuestros suministros cumplen con los estándares
-				internacionales de seguridad y resistencia mecánica.
-			</p>
+      <p class="text-gray-400 max-w-[600px] text-lg leading-relaxed">
+        precisión de grado industrial para proyectos que requieren resistencia
+        absoluta. suministros certificados para ingeniería y construcción.
+      </p>
 
-			<p>Logística Pesada</p>
-			Entregas directas a obra o planta con flota propia preparada para cargamentos
-			de alto tonelaje.
+      <div class="flex gap-8 mt-6">
+        <button class="bg-[#ffcc00] text-black font-bold h-14 w-60 uppercase text-sm">
+          explorar catálogo
+        </button>
+        <button class="border-2 border-white text-white font-bold h-14 w-60 uppercase text-sm">
+          fichas técnicas
+        </button>
+      </div>
+    </div>
+  </header>
 
-			<p>
-				Asesoría Técnica<p></p>
-				Ingenieros a su disposición para el cálculo de necesidades de anclaje
-				y torque específico.
-			</p>
-		</div>
+  <section class="bg-[#f3f4f6] w-full py-24">
+    <div class="max-w-[1400px] mx-auto px-40 flex justify-between gap-16">
+      
+      <div class="flex flex-col flex-1 gap-5">
+        <Icon name="line-md--home-twotone" class="text-yellow-700" size={45} />
+        <div>
+          <p class="font-bold text-black text-xl uppercase mb-3">CERTIFICACIÓN ISO</p>
+          <p class="text-gray-600 text-base leading-relaxed">Cumplimos con estándares internacionales de seguridad en cada pieza.</p>
+        </div>
+      </div>
 
-		<Icon name="line-md--home-twotone" size={32} />
-		<Icon name="typcn--shopping-cart" size={32} />
-		<Icon name="healthicons--magnifying-glass" size={32} />
-	</section>
+      <div class="flex flex-col flex-1 gap-5">
+        <Icon name="typcn--shopping-cart" class="text-yellow-700" size={45} />
+        <div>
+          <p class="font-bold text-black text-xl uppercase mb-3">LOGÍSTICA PESADA</p>
+          <p class="text-gray-600 text-base leading-relaxed">Entregas directas a obra con flota propia preparada para gran tonelaje.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col flex-1 gap-5">
+        <Icon name="healthicons--magnifying-glass" class="text-yellow-700" size={45} />
+        <div>
+          <p class="font-bold text-black text-xl uppercase mb-3">ASESORÍA TÉCNICA</p>
+          <p class="text-gray-600 text-base leading-relaxed">Cálculo de necesidades de anclaje y torque profesional por ingenieros.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
 </Layout>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    overflow-x: hidden;
+  }
+</style>
