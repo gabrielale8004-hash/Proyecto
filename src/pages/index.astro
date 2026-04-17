@@ -1,63 +1,106 @@
 ---
+import Tarjeta from "../components/Tarjeta.astro";
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
-	<section class="bg-black px-0.5 py-14">
-		<p class="bg-amber-300 px-8 py-8 text-4xl text font-serif">
-			expertos industriales
-		</p>
-		<div>
-			<p class="text-4xl px-4 py-4 text-amber-50">
-				Especialistas en Tornillería y Herramienta
-			</p>
-			<p class="text-4x1 px-4 py-1 text-amber-50">
-				Precisión de grado industrial para proyectos que requieren
-				resistencia absoluta. Suministros certificados para ingeniería y
-				construcción.
-			</p>
-		</div>
-		<div class="px-6 py-4">
-			<button class="bg-amber-300 px-3 py-3">explorar catalogo</button>
-			<button class="bg-black px-3 py-3 text-amber-50"
-				>fichas tecnicas</button
-			>
-		</div>
-	</section>
+  <div class="overflow-x-hidden antialiased">
+    
+    <header class="flex bg-[#111] text-white pt-15 pb-15 px-15">
+      <div class="flex flex-col gap-8">
+        
+        <p class="bg-[#ffcc00] text-black font-bold px-6 py-1.5 uppercase tracking-wider w-fit">
+          expertos industriales
+        </p>
 
-	<section>
-		<div>
-			<p class="uppercase text-3xl px-4 py-14">categorias descatacadas</p>
-		</div>
-		<div class="flex justify-between px-10">
-			
-			
-			<p>Certificacion ISO</p>
+        <h1 class="text-7xl font-bold italic leading-[1.05] uppercase">
+          ESPECIALISTAS EN <br />
+          <span class="text-[#ffcc00]">TORNILLERÍA</span> <br />
+          Y HERRAMIENTAS
+        </h1>
 
-			<p>Logística Pesada</p>
+        <p class="text-gray-400 max-w-150 text-lg">
+          precisión de grado industrial para proyectos que requieren resistencia
+          absoluta. suministros certificados para ingeniería y construcción.
+        </p>
 
-			<p>
-				Asesoría Técnica<p></p>
+        <div class="flex gap-8 mt-6">
+          <button class="bg-[#ffcc00] text-black font-bold py-4 px-12 uppercase text-sm">
+            explorar catálogo
+          </button>
+          <button class="border-2 border-white text-white font-bold py-4 px-12 uppercase text-sm">
+            fichas técnicas
+          </button>
+        </div>
+      </div>
+    </header>
 
-				<div class="flex justify-between px-4">
-					<p>
-						Todos nuestros suministros cumplen con los estándares
-						internacionales de seguridad y resistencia mecánica.
-					</p>
+    <section class="bg-[#f3f4f6] py-32 px-40">
+      <div class="flex justify-between gap-16">
+        
+        <div class="flex flex-col flex-1 gap-5">
+          <Icon name="line-md--home-twotone" class="text-yellow-700" size={45} />
+          <div>
+            <p class="font-bold text-black text-xl uppercase mb-3">CERTIFICACIÓN ISO</p>
+            <p class="text-gray-600 text-base">Cumplimos con estándares internacionales de seguridad en cada pieza.</p>
+          </div>
+        </div>
 
-					Entregas directas a obra o planta con flota propia preparada
-					para cargamentos de alto tonelaje.
-				</div>
-				Ingenieros a su disposición para el cálculo de necesidades de anclaje
-				y torque específico.
-			</p>
-		</div>
+        <div class="flex flex-col flex-1 gap-5">
+          <Icon name="typcn--shopping-cart" class="text-yellow-700" size={45} />
+          <div>
+            <p class="font-bold text-black text-xl uppercase mb-3">LOGÍSTICA PESADA</p>
+            <p class="text-gray-600 text-base">Entregas directas a obra con flota propia preparada para gran tonelaje.</p>
+          </div>
+        </div>
 
-		<div>
-			<p class="uppercase text-3xl px-4 py-14">inventario critico</p>
-		</div>
+        <div class="flex flex-col flex-1 gap-5">
+          <Icon name="healthicons--magnifying-glass" class="text-yellow-700" size={45} />
+          <div>
+            <p class="font-bold text-black text-xl uppercase mb-3">ASESORÍA TÉCNICA</p>
+            <p class="text-gray-600 text-base">Cálculo de necesidades de anclaje y torque profesional por ingenieros.</p>
+          </div>
+        </div>
 
-		<img src="/unnamed.png" alt="" />
-	</section>
+      </div>
+    </section>
+
+    <div>
+      
+    <div class="flex flex-col">
+  <div class="px-6 pt-24 pb-6 text-3xl font-black">
+    INVENTARIO CRÍTICO
+  </div>
+  
+  <div class="flex px-6 gap-4">
+    </div>
+</div>
+  
+  </div>
+
+<div class="flex justify-between gap-6 py-20 px-40">
+  
+ <div class="flex justify-between gap-6 py-20 px-40">
+  
+  <Tarjeta 
+    title="Bota de Seguridad"
+    description="Protección dieléctrica Pro-Steel."
+    image="/bota.jpeg" 
+  />
+
+  <Tarjeta 
+    title="Juego de Llaves"
+    description="Llaves mixtas de acero CR-V."
+    image="/llave.jpeg" 
+  />
+
+  <Tarjeta 
+    title="Tornillo Hexagonal"
+    description="Grado 8 de alta resistencia."
+    image="/unnamed.png" 
+  />
+
+</div>
+
 </Layout>

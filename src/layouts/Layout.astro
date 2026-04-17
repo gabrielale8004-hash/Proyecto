@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import "../styles/global.css";
 ---
 
@@ -13,22 +14,23 @@ import "../styles/global.css";
 		<title>Tesk Suministros</title>
 	</head>
 	<body>
-		<header>
-			<header>
-				<p>Tesk Suministros</p>
+		<header class="flex justify-between px-12 py-5">
+			<p class="text-black font-bold">Tesk Suministros</p>
 
-				<div>
-					<a href="/contacts">Contactos</a>
-					<a href="/products">productos</a>
-				</div>
+			<div class="flex gap-10">
+				<a href="/contacts" class="uppercase font-bold">Contactos</a>
+				<a href="/products" class="uppercase font-bold">productos</a>
+			</div>
 
-				<div>
-					<button>iniciar sesion</button>
-				</div>
-			</header>
+			<div class="flex ">
+				<Icon name="line-md--home-twotone" size={32} />
 
-			<slot />
+				<Icon name="eva--car-fill" size={32} />
+				<button class="bg-amber-600 px-8 py-2 text font-bold">iniciar sesion</button>
+			</div>
 		</header>
+
+		<slot />
 	</body>
 
 	<style>
