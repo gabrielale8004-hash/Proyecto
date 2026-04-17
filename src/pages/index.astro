@@ -1,76 +1,106 @@
 ---
+import Tarjeta from "../components/Tarjeta.astro";
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 ---
 
 <Layout>
-  <header class="flex bg-[#111] text-white min-h-[580px] w-full pt-24 pb-24">
-    <div class="max-w-[1400px] mx-auto w-full px-40 flex flex-col gap-8">
+  <div class="overflow-x-hidden antialiased">
+    
+    <header class="flex bg-[#111] text-white pt-15 pb-15 px-36">
+      <div class="flex flex-col gap-8">
+        
+        <p class="bg-[#ffcc00] text-black font-bold px-6 py-1.5 uppercase tracking-wider w-fit">
+          expertos industriales
+        </p>
+
+        <h1 class="text-7xl font-bold italic leading-[1.05] uppercase">
+          ESPECIALISTAS EN <br />
+          <span class="text-[#ffcc00]">TORNILLERÍA</span> <br />
+          Y HERRAMIENTAS
+        </h1>
+
+        <p class="text-gray-400 max-w-[600px] text-lg">
+          precisión de grado industrial para proyectos que requieren resistencia
+          absoluta. suministros certificados para ingeniería y construcción.
+        </p>
+
+        <div class="flex gap-8 mt-6">
+          <button class="bg-[#ffcc00] text-black font-bold py-4 px-12 uppercase text-sm">
+            explorar catálogo
+          </button>
+          <button class="border-2 border-white text-white font-bold py-4 px-12 uppercase text-sm">
+            fichas técnicas
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-[#f3f4f6] py-32 px-40">
+      <div class="flex justify-between gap-16">
+        
+        <div class="flex flex-col flex-1 gap-5">
+          <Icon name="line-md--home-twotone" class="text-yellow-700" size={45} />
+          <div>
+            <p class="font-bold text-black text-xl uppercase mb-3">CERTIFICACIÓN ISO</p>
+            <p class="text-gray-600 text-base">Cumplimos con estándares internacionales de seguridad en cada pieza.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col flex-1 gap-5">
+          <Icon name="typcn--shopping-cart" class="text-yellow-700" size={45} />
+          <div>
+            <p class="font-bold text-black text-xl uppercase mb-3">LOGÍSTICA PESADA</p>
+            <p class="text-gray-600 text-base">Entregas directas a obra con flota propia preparada para gran tonelaje.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col flex-1 gap-5">
+          <Icon name="healthicons--magnifying-glass" class="text-yellow-700" size={45} />
+          <div>
+            <p class="font-bold text-black text-xl uppercase mb-3">ASESORÍA TÉCNICA</p>
+            <p class="text-gray-600 text-base">Cálculo de necesidades de anclaje y torque profesional por ingenieros.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div>
       
-      <p class="bg-[#ffcc00] text-black font-bold text-base w-fit px-6 py-1.5 uppercase tracking-wider">
-        expertos industriales
-      </p>
-
-      <h1 class="text-7xl font-bold italic leading-[1.05] uppercase">
-        ESPECIALISTAS EN <br />
-        <span class="text-[#ffcc00]">TORNILLERÍA</span> <br />
-        Y HERRAMIENTAS
-      </h1>
-
-      <p class="text-gray-400 max-w-[600px] text-lg leading-relaxed">
-        precisión de grado industrial para proyectos que requieren resistencia
-        absoluta. suministros certificados para ingeniería y construcción.
-      </p>
-
-      <div class="flex gap-8 mt-6">
-        <button class="bg-[#ffcc00] text-black font-bold h-14 w-60 uppercase text-sm">
-          explorar catálogo
-        </button>
-        <button class="border-2 border-white text-white font-bold h-14 w-60 uppercase text-sm">
-          fichas técnicas
-        </button>
-      </div>
+    <div class="flex flex-col">
+  <div class="px-26 pt-24 pb-6 text-3xl font-black">
+    INVENTARIO CRÍTICO
+  </div>
+  
+  <div class="flex px-6 gap-4">
     </div>
-  </header>
+</div>
+  
+  </div>
 
-  <section class="bg-[#f3f4f6] w-full py-24">
-    <div class="max-w-[1400px] mx-auto px-40 flex justify-between gap-16">
-      
-      <div class="flex flex-col flex-1 gap-5">
-        <Icon name="line-md--home-twotone" class="text-yellow-700" size={45} />
-        <div>
-          <p class="font-bold text-black text-xl uppercase mb-3">CERTIFICACIÓN ISO</p>
-          <p class="text-gray-600 text-base leading-relaxed">Cumplimos con estándares internacionales de seguridad en cada pieza.</p>
-        </div>
-      </div>
+<div class="flex justify-between gap-6 py-20 px-40">
+  
+ <div class="flex justify-between gap-6 py-20 px-40">
+  
+  <Tarjeta 
+    title="Bota de Seguridad"
+    description="Protección dieléctrica Pro-Steel."
+    image="/bota.jpeg" 
+  />
 
-      <div class="flex flex-col flex-1 gap-5">
-        <Icon name="typcn--shopping-cart" class="text-yellow-700" size={45} />
-        <div>
-          <p class="font-bold text-black text-xl uppercase mb-3">LOGÍSTICA PESADA</p>
-          <p class="text-gray-600 text-base leading-relaxed">Entregas directas a obra con flota propia preparada para gran tonelaje.</p>
-        </div>
-      </div>
+  <Tarjeta 
+    title="Juego de Llaves"
+    description="Llaves mixtas de acero CR-V."
+    image="/llave.jpeg" 
+  />
 
-      <div class="flex flex-col flex-1 gap-5">
-        <Icon name="healthicons--magnifying-glass" class="text-yellow-700" size={45} />
-        <div>
-          <p class="font-bold text-black text-xl uppercase mb-3">ASESORÍA TÉCNICA</p>
-          <p class="text-gray-600 text-base leading-relaxed">Cálculo de necesidades de anclaje y torque profesional por ingenieros.</p>
-        </div>
-      </div>
+  <Tarjeta 
+    title="Tornillo Hexagonal"
+    description="Grado 8 de alta resistencia."
+    image="/unnamed.png" 
+  />
 
-    </div>
-  </section>
+</div>
+
 </Layout>
-
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    overflow-x: hidden;
-  }
-</style>

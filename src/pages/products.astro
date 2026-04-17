@@ -3,66 +3,57 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <section class="bg-white w-full py-24">
-    <div class="max-w-[1400px] mx-auto px-40 flex flex-col gap-12">
-      
-      <div class="flex flex-col gap-2">
-        <p class="text-[#9c8414] font-bold text-sm uppercase tracking-widest">Catálogo</p>
-        <h2 class="text-4xl font-bold text-black uppercase italic">Nuestros Productos</h2>
-        <div class="h-1 w-20 bg-[#ffcc00]"></div>
-      </div>
-
-      <div class="flex flex-wrap gap-10 justify-between">
-        
-        <div class="flex flex-col gap-4 w-[300px] bg-white p-6 border-b-4 border-transparent hover:border-[#ffcc00] transition-all group shadow-md hover:shadow-2xl">
-          <div class="bg-gray-100 h-64 w-full flex items-center justify-center overflow-hidden">
-             <div class="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
-               <span class="text-gray-500 font-bold uppercase text-[10px]">Tornillo</span>
-             </div>
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="text-xs text-gray-500 uppercase">Tornillería</p>
-            <p class="font-bold text-lg text-black uppercase">Tornillo Hexagonal G5</p>
-            <p class="text-yellow-700 font-bold">$0.00</p>
-          </div>
-          <button class="bg-[#111] text-white py-3 font-bold uppercase text-xs group-hover:bg-[#ffcc00] group-hover:text-black transition-colors">
-            Ver detalles
-          </button>
-        </div>
-
-        <div class="flex flex-col gap-4 w-[300px] bg-white p-6 border-b-4 border-transparent hover:border-[#ffcc00] transition-all group shadow-md hover:shadow-2xl">
-          <div class="bg-gray-100 h-64 w-full flex items-center justify-center overflow-hidden">
-             <div class="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
-               <span class="text-gray-500 font-bold uppercase text-[10px]">Anclaje</span>
-             </div>
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="text-xs text-gray-500 uppercase">Anclajes</p>
-            <p class="font-bold text-lg text-black uppercase">Anclaje de Expansión</p>
-            <p class="text-yellow-700 font-bold">$0.00</p>
-          </div>
-          <button class="bg-[#111] text-white py-3 font-bold uppercase text-xs group-hover:bg-[#ffcc00] group-hover:text-black transition-colors">
-            Ver detalles
-          </button>
-        </div>
-
-        <div class="flex flex-col gap-4 w-[300px] bg-white p-6 border-b-4 border-transparent hover:border-[#ffcc00] transition-all group shadow-md hover:shadow-2xl">
-          <div class="bg-gray-100 h-64 w-full flex items-center justify-center overflow-hidden">
-             <div class="w-24 h-24 bg-gray-300 rounded-full flex items-center justify-center">
-               <span class="text-gray-500 font-bold uppercase text-[10px]">Llave</span>
-             </div>
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="text-xs text-gray-500 uppercase">Herramientas</p>
-            <p class="font-bold text-lg text-black uppercase">Llave de Torque Prof.</p>
-            <p class="text-yellow-700 font-bold">$0.00</p>
-          </div>
-          <button class="bg-[#111] text-white py-3 font-bold uppercase text-xs group-hover:bg-[#ffcc00] group-hover:text-black transition-colors">
-            Ver detalles
-          </button>
-        </div>
-
-      </div>
+  <div class="bg-white py-16 px-12">
+    
+    <div class="mb-12">
+      <p class="text-[#ffcc00] font-bold text-xs uppercase">Catálogo</p>
+      <p class="text-4xl font-black uppercase italic text-black ">Nuestros Productos</p>
     </div>
-  </section>
+
+    <div class="flex justify-between gap-5">
+      
+      <div class="flex-1 border border-gray-200">
+        <div class="bg-gray-100 py-8 flex justify-center">
+          <img src="/unnamed.png" class="h-40" />
+        </div>
+        <div class="p-5">
+          <p class="text-[10px] text-gray-400 font-bold uppercase">Tornillería</p>
+          <p class="font-bold text-black uppercase">Tornillo Hexagonal G5</p>
+          <p class="text-black font-bold mt-2">Consultar Precio</p>
+          <button class="w-full bg-[#111] text-white py-3 mt-4 font-bold uppercase text-[10px]">
+            Ver Detalles
+          </button>
+        </div>
+      </div>
+
+      <div class="flex-1 border border-gray-200">
+        <div class="bg-gray-100 py-8 flex justify-center">
+          <img src="/llave.jpeg" class="h-40" />
+        </div>
+        <div class="p-5">
+          <p class="text-[10px] text-gray-400 font-bold uppercase">Herramientas</p>
+          <p class="font-bold text-black uppercase">Llave de Torque Prof.</p>
+          <p class="text-black font-bold mt-2">Consultar Precio</p>
+          <button class="w-full bg-[#111] text-white py-3 mt-4 font-bold uppercase text-[10px]">
+            Ver Detalles
+          </button>
+        </div>
+      </div>
+
+      <div class="flex-1 border border-gray-200">
+        <div class="bg-gray-100 py-8 flex justify-center">
+          <img src="/bota.jpeg" class="h-40" />
+        </div>
+        <div class="p-5">
+          <p class="text-[10px] text-gray-400 font-bold uppercase">Seguridad</p>
+          <p class="font-bold text-black uppercase">Bota de Seguridad</p>
+          <p class="text-black font-bold mt-2">Consultar Precio</p>
+          <button class="w-full bg-[#111] text-white py-3 mt-4 font-bold uppercase text-[10px]">
+            Ver Detalles
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </Layout>
