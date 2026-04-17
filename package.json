@@ -12,6 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@iconify-json/healthicons": "^1.2.12",
+    "@iconify-json/line-md": "^1.2.16",
+    "@iconify-json/typcn": "^1.2.2",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.0.6",
     "astro-icon": "^1.1.5",
