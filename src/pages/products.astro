@@ -2,58 +2,29 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
+<Layout title="Catálogo | Tesk">
   <div class="bg-white py-16 px-12">
-    
     <div class="mb-12">
       <p class="text-[#ffcc00] font-bold text-xs uppercase">Catálogo</p>
-      <p class="text-4xl font-black uppercase italic text-black ">Nuestros Productos</p>
+      <p class="text-4xl font-black uppercase italic text-black">Nuestros Productos</p>
     </div>
 
     <div class="flex justify-between gap-5">
-      
-      <div class="flex-1 border border-gray-200">
-        <div class="bg-gray-100 py-8 flex justify-center">
-          <img src="/unnamed.png" class="h-40" />
-        </div>
-        <div class="p-5">
-          <p class="text-[10px] text-gray-400 font-bold uppercase">Tornillería</p>
-          <p class="font-bold text-black uppercase">Tornillo Hexagonal G5</p>
-          <p class="text-black font-bold mt-2">Consultar Precio</p>
-          <button class="w-full bg-[#111] text-white py-3 mt-4 font-bold uppercase text-[10px]">
-            Ver Detalles
-          </button>
-        </div>
+      <div class="flex-1 border border-black p-5 bg-gray-50">
+        <img src="/unnamed.png" class="h-40 mx-auto" />
+        <p class="font-bold mt-4 uppercase">Tornillería</p>
+        <p class="text-sm text-gray-600">Consultar Precio</p>
       </div>
-
-      <div class="flex-1 border border-gray-200">
-        <div class="bg-gray-100 py-8 flex justify-center">
-          <img src="/llave.jpeg" class="h-40" />
-        </div>
-        <div class="p-5">
-          <p class="text-[10px] text-gray-400 font-bold uppercase">Herramientas</p>
-          <p class="font-bold text-black uppercase">Llave de Torque Prof.</p>
-          <p class="text-black font-bold mt-2">Consultar Precio</p>
-          <button class="w-full bg-[#111] text-white py-3 mt-4 font-bold uppercase text-[10px]">
-            Ver Detalles
-          </button>
-        </div>
+      <div class="flex-1 border border-black p-5 bg-gray-50">
+        <img src="/llave.jpeg" class="h-40 mx-auto" />
+        <p class="font-bold mt-4 uppercase">Herramientas</p>
+        <p class="text-sm text-gray-600">Consultar Precio</p>
       </div>
-
-      <div class="flex-1 border border-gray-200">
-        <div class="bg-gray-100 py-8 flex justify-center">
-          <img src="/bota.jpeg" class="h-40" />
-        </div>
-        <div class="p-5">
-          <p class="text-[10px] text-gray-400 font-bold uppercase">Seguridad</p>
-          <p class="font-bold text-black uppercase">Bota de Seguridad</p>
-          <p class="text-black font-bold mt-2">Consultar Precio</p>
-          <button class="w-full bg-[#111] text-white py-3 mt-4 font-bold uppercase text-[10px]">
-            Ver Detalles
-          </button>
-        </div>
+      <div class="flex-1 border border-black p-5 bg-gray-50">
+        <img src="/bota.jpeg" class="h-40 mx-auto" />
+        <p class="font-bold mt-4 uppercase">Seguridad</p>
+        <p class="text-sm text-gray-600">Consultar Precio</p>
       </div>
-
     </div>
   </div>
 </Layout>
