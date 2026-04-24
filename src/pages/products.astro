@@ -1,6 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Tarjeta from "../components/Tarjeta.astro";
+
+const listadoProductos = [
+    {
+        title: "Tornillo Hexagonal G5",
+        sku: "TESK-001",
+        price: "$12.00",
+        description: "Tornillería de alta resistencia para uso industrial y automotriz.",
+        image: "/unnamed.png",
+    },
+    {
+        title: "Llave de Torque Prof.",
+        sku: "TESK-002",
+        price: "$85.00",
+        description: "Herramienta de precisión con mango ergonómico y ajuste rápido.",
+        image: "/llave.jpeg",
+    },
+    {
+        title: "Bota de Seguridad",
+        sku: "TESK-003",
+        price: "$45.00",
+        description: "Calzado con punta de acero y suela antideslizante certificada.",
+        image: "/bota.jpeg",
+    },
+];
 ---
 
 <Layout title="Catálogo | Tesk">
@@ -41,24 +65,21 @@ import Tarjeta from "../components/Tarjeta.astro";
         </header>
 
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-          <Tarjeta 
-            title="Tornillo Hexagonal G5" 
-            sku="TESK-001"
-            price="$12.00"
-            image="/unnamed.png" 
-          />
-          <Tarjeta 
-            title="Llave de Torque Prof." 
-            sku="TESK-002"
-            price="$85.00"
-            image="/llave.jpeg" 
-          />
-          <Tarjeta 
-            title="Bota de Seguridad" 
-            sku="TESK-003"
-            price="$45.00"
-            image="/bota.jpeg" 
-          />
+          {
+            listadoProductos.map((producto) => (
+              <Tarjeta 
+                title={producto.title} 
+                sku={producto.sku}
+                price={producto.price}
+                description={producto.description}
+                image={producto.image} 
+              />
+            ))
+          }
+        </div>
+
+        <div class="mt-12 p-8 border border-dashed border-zinc-300 flex items-center justify-center text-zinc-500 italic text-sm">
+            Más productos próximamente...
         </div>
 
       </div>
