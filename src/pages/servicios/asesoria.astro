@@ -1,0 +1,93 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout title="Soporte Técnico | Suministros Tesk">
+  <main class="relative bg-[#050505] min-h-screen text-white antialiased overflow-hidden">
+    
+    <!-- FONDO INDUSTRIAL FIJO -->
+    <div class="fixed inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80" 
+        class="w-full h-full object-cover opacity-25 grayscale"
+        alt="Ingeniería Industrial"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
+    </div>
+
+    <div class="relative z-10 container mx-auto px-6">
+      
+      <!-- SECCIÓN HERO -->
+      <section class="pt-32 pb-24">
+        <a href="/" class="inline-flex items-center gap-3 text-[#ffcc00] uppercase text-[10px] font-black tracking-[0.4em] mb-10 hover:translate-x-2 transition-transform">
+          <Icon name="lucide:arrow-left" class="w-4 h-4" /> Inicio
+        </a>
+        <h1 class="text-6xl md:text-[90px] font-black uppercase tracking-tighter leading-[0.8] mb-8">
+          SOPORTE <br/> <span class="text-[#ffcc00]">ESPECIALIZADO</span>
+        </h1>
+        <p class="max-w-2xl text-gray-300 text-lg leading-relaxed border-l-2 border-[#ffcc00] pl-6 font-medium">
+          Un tornillo mal seleccionado puede costar miles en reparaciones. Nuestros ingenieros le acompañan para garantizar la precisión técnica que su maquinaria requiere.
+        </p>
+      </section>
+
+      <!-- GRILLA DE SERVICIOS CON GLASSMORPHISM PESADO -->
+      <section class="pb-40">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+          <!-- Servicio 01: Conversión -->
+          <div class="group relative overflow-hidden rounded-[40px]">
+            <div class="absolute inset-0 bg-[#ffcc00]/5 z-0"></div>
+            
+            <div class="relative z-10 p-12 bg-black/70 backdrop-blur-3xl border border-white/10 h-full flex flex-col justify-between group-hover:border-[#ffcc00]/40 transition-all duration-500">
+              <div>
+                <div class="flex items-center justify-between mb-12">
+                  <span class="bg-[#ffcc00] text-black px-3 py-1 rounded-full font-black tracking-widest text-[9px]">SERVICIO 01</span>
+                  <Icon name="lucide:move-diagonal" class="w-6 h-6 text-[#ffcc00] opacity-50 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <h3 class="text-4xl font-black uppercase italic mb-6 leading-none tracking-tighter">
+                  Conversión de <br/> <span class="text-[#ffcc00]">Medidas</span>
+                </h3>
+                <p class="text-gray-200 text-lg leading-relaxed mb-10 font-medium">
+                  Evite errores críticos. Realizamos la transición técnica de estándar SAE a métrico DIN con precisión milimétrica.
+                </p>
+              </div>
+              <div class="h-1.5 w-16 bg-[#ffcc00] rounded-full group-hover:w-full transition-all duration-700 shadow-[0_0_15px_rgba(255,204,0,0.5)]"></div>
+            </div>
+          </div>
+
+          <!-- Servicio 02: Proyectos a Medida -->
+          <div class="group relative overflow-hidden rounded-[40px]">
+            <div class="absolute inset-0 bg-[#ffcc00]/5 z-0"></div>
+            
+            <div class="relative z-10 p-12 bg-black/70 backdrop-blur-3xl border border-white/10 h-full flex flex-col justify-between group-hover:border-[#ffcc00]/40 transition-all duration-500">
+              <div>
+                <div class="flex items-center justify-between mb-12">
+                  <span class="bg-[#ffcc00] text-black px-3 py-1 rounded-full font-black tracking-widest text-[9px]">SERVICIO 02</span>
+                  <Icon name="lucide:settings-2" class="w-6 h-6 text-[#ffcc00] opacity-50 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <h3 class="text-4xl font-black uppercase italic mb-6 leading-none tracking-tighter">
+                  Fabricación <br/> <span class="text-[#ffcc00]">Bajo Plano</span>
+                </h3>
+                <p class="text-gray-200 text-lg leading-relaxed mb-10 font-medium">
+                  Si la pieza no existe en catálogo, gestionamos su fabricación personalizada basada en planos específicos para su industria.
+                </p>
+              </div>
+              <div class="h-1.5 w-16 bg-[#ffcc00] rounded-full group-hover:w-full transition-all duration-700 shadow-[0_0_15px_rgba(255,204,0,0.5)]"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CIERRE / FOOTER SIN UBICACIONES INCORRECTAS -->
+      <footer class="py-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-gray-500 uppercase tracking-[0.4em]">
+        <span>Suministros Tesk © 2026</span>
+        <div class="flex gap-8">
+          <span>Compromiso Industrial</span>
+          <span>Calidad Garantizada</span>
+        </div>
+      </footer>
+    </div>
+  </main>
+</Layout>

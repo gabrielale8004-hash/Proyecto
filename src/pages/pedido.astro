@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Pedido Premium | Suministros Tesk">
+  <div class="relative min-h-screen bg-[#050505] text-white selection:bg-[#c5a059] selection:text-black font-sans">
+    
+    <!-- FONDO PRINCIPAL CON IMAGEN INDUSTRIAL -->
+    <div class="fixed inset-0 z-0">
+      <div class="absolute inset-0 bg-black/60 z-10"></div>
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80')] bg-cover bg-center grayscale opacity-30"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#050505_100%)] z-20"></div>
+    </div>
+
+    <main class="relative z-30 pt-32 pb-20 px-8 max-w-7xl mx-auto">
+      <!-- CABECERA -->
+      <div class="mb-20 border-l-[6px] border-[#c5a059] pl-10">
+        <p class="text-[11px] font-black uppercase tracking-[0.7em] text-[#c5a059] mb-4">Orden de Despacho Especializada</p>
+        <h1 class="text-7xl font-black uppercase italic tracking-tighter leading-none">
+          RESUMEN <span class="bg-gradient-to-r from-[#8e6d2f] via-[#efd38d] to-[#c5a059] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(197,160,89,0.4)]">DE COMPRA</span>
+        </h1>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <!-- LISTADO DE PRODUCTOS CON BORDES MEJORADOS -->
+        <div class="lg:col-span-7 space-y-6" id="cart-list"></div>
+
+        <!-- PANEL DE PAGO -->
+        <div class="lg:col-span-5 relative">
+          <div class="bg-white p-12 rounded-sm shadow-[0_30px_60px_rgba(0,0,0,0.8)] lg:sticky lg:top-32 border-t-[10px] border-[#c5a059] overflow-hidden group">
+            <!-- Imagen de fondo sutil en el panel blanco -->
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+            
+            <h2 class="relative z-10 text-black font-black uppercase tracking-[0.4em] text-[10px] mb-10 border-b border-black/5 pb-6 italic">Checkout Seguro</h2>
+            <div class="relative z-10 mb-12">
+              <span class="text-[11px] font-bold text-black/30 uppercase tracking-[0.3em]">Inversión Total</span>
+              <div class="flex items-baseline gap-3 mt-2 text-black">
+                <span id="grand-total" class="text-7xl font-black italic tracking-tighter leading-none">$0.00</span>
+                <span class="text-sm font-black italic opacity-20 tracking-widest uppercase">Usd</span>
+              </div>
+            </div>
+            
+            <a id="whatsapp-btn" href="#" target="_blank" class="relative z-10 group flex items-center justify-center gap-4 w-full bg-[#050505] text-white py-8 rounded-sm font-black uppercase text-[12px] tracking-[0.4em] transition-all hover:bg-[#c5a059] hover:text-black overflow-hidden shadow-2xl active:scale-95">
+              <span class="relative z-10">Confirmar Pedido</span>
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            </a>
+            
+            <div class="relative z-10 mt-10 pt-8 border-t border-black/5 text-center">
+              <p class="text-[10px] text-black/30 font-black uppercase tracking-widest italic mb-2">Suministros Tesk © 2026</p>
+              <p class="text-[9px] text-[#c5a059] font-black uppercase tracking-[0.3em]">Valencia, Venezuela</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</Layout>
+
+<script>
+  import { cartItems, removeCartItem } from '../store/cartStore.js';
+  interface CartItem { name: string; price: string; }
+  
+  const cartList = document.getElementById('cart-list');
+  const grandTotal = document.getElementById('grand-total');
+  const whatsappBtn = document.getElementById('whatsapp-btn');
+  const numVentas = "582455646129";
+
+  function updateUI() {
+    const items = cartItems.get() as CartItem[];
+    let total = 0;
+    let textPedido = "Hola Suministros Tesk, deseo concretar este pedido:%0A%0A";
+
+    if (!items || items.length === 0) {
+      if (cartList) cartList.innerHTML = '<div class="py-40 border-2 border-dashed border-white/5 bg-white/[0.01] rounded-sm text-center flex flex-col items-center justify-center gap-8"><p class="opacity-10 font-black uppercase tracking-[0.8em] text-xs italic">El carrito está vacío</p></div>';
+      if (grandTotal) grandTotal.innerText = "$0.00";
+      if (whatsappBtn) { whatsappBtn.style.pointerEvents = "none"; whatsappBtn.style.opacity = "0.2"; }
+      return;
+    }
+
+    if (whatsappBtn) { whatsappBtn.style.pointerEvents = "auto"; whatsappBtn.style.opacity = "1"; }
+
+    if (cartList) {
+      cartList.innerHTML = items.map((item, index) => {
+        const price = parseFloat(item.price);
+        total += price;
+        textPedido += "%E2%80%A2 " + item.name + " ($" + price.toFixed(2) + ")%0A";
+        
+        // Estilo de caja con imagen de fondo sutil y bordes refinados
+        return '<div class="group relative overflow-hidden rounded-sm border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-10 flex justify-between items-center transition-all duration-500 hover:border-[#c5a059]/50 shadow-xl mb-4">' +
+          '<div class="absolute inset-0 bg-[url(\'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80\')] bg-cover bg-center opacity-[0.03] group-hover:opacity-[0.07] transition-opacity"></div>' +
+          '<div class="relative z-10">' +
+            '<h3 class="font-black uppercase italic text-2xl text-white tracking-tight group-hover:text-[#efd38d] transition-colors">' + item.name + '</h3>' +
+            '<div class="flex items-center gap-3 mt-3"><span class="h-[2px] w-6 bg-[#c5a059]"></span><p class="text-[9px] text-[#c5a059] font-black uppercase tracking-[0.4em]">Suministro Certificado</p></div>' +
+          '</div>' +
+          '<div class="relative z-10 text-right">' +
+            '<p class="text-3xl font-black italic text-white tracking-tighter">$' + price.toFixed(2) + '</p>' +
+            '<button class="delete-item text-white/10 font-black uppercase text-[9px] mt-4 tracking-[0.3em] hover:text-red-500 transition-colors" data-index="' + index + '">[ REMOVER ]</button>' +
+          '</div></div>';
+      }).join('');
+    }
+
+    if (grandTotal) grandTotal.innerText = '$' + total.toFixed(2);
+    if (whatsappBtn) whatsappBtn.setAttribute('href', 'https://wa.me/' + numVentas + '?text=' + textPedido + '%0A*Total: $' + total.toFixed(2) + '*');
+  }
+
+  cartItems.subscribe(updateUI);
+  cartList?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.classList.contains('delete-item')) {
+      removeCartItem(parseInt(target.dataset.index || "0"));
+    }
+  });
+</script>

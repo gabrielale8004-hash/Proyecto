@@ -1,52 +1,150 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
-<Layout>
-  <header class="bg-[#111] text-white py-20 px-10">
-    <div class="contenido">
-      <p class="bg-[#ffcc00] text-black inline-block px-3 py-1 font-bold text-[12px] mb-5 uppercase">
-        Atención al cliente
-      </p>
+<Layout title="Contacto | Tesk Suministros">
+  <main class="bg-[#050505] text-white antialiased selection:bg-[#ffcc00] selection:text-black font-archivo overflow-hidden relative">
+    
+    <!-- FONDO DECORATIVO ESTRUCTURAL -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+      <div class="absolute inset-0 opacity-[0.03]" 
+           style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 100px 100px;">
+      </div>
       
-      <h1 class="text-5xl font-bold italic leading-none mb-5 uppercase">
-        Contáctanos para <br /> 
-        <span class="text-[#ffcc00]">Asesoría Técnica</span>
-      </h1>
-      
-      <p class="text-gray-400 max-w-137.5 leading-relaxed">
-        Estamos listos para ayudarte con tus proyectos industriales. 
-        Escríbenos para cotizaciones por volumen o dudas sobre anclajes.
-      </p>
+      <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#ffcc00]/5 to-transparent opacity-30"></div>
+      <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#ffcc00]/5 to-transparent opacity-30"></div>
+
+      <div class="absolute left-8 top-1/2 -translate-y-1/2 [writing-mode:vertical-rl] rotate-180 flex items-center gap-6 text-[7px] font-black tracking-[1em] uppercase text-white/10">
+        <span class="text-[#ffcc00]/40">Industrial Excellence</span>
+        <div class="h-12 w-[1px] bg-white/10"></div>
+      </div>
+
+      <div class="absolute right-8 top-1/2 -translate-y-1/2 [writing-mode:vertical-rl] flex items-center gap-6 text-[7px] font-black tracking-[1em] uppercase text-white/10">
+        <span class="text-[#ffcc00]/40">Valencia • Guacara</span>
+        <div class="h-12 w-[1px] bg-white/10"></div>
+      </div>
     </div>
-  </header>
 
-  <section class="bg-[#efefef] py-20 px-10">
-    <div class="flex justify-between gap-10">
-      
-      <div class="flex-1">
-        <p class="font-bold text-black mb-3 text-lg uppercase">Ubicación</p>
-        <p class="text-gray-600 leading-normal">
-          Guacara, <br /> Carabobo, Venezuela.
-        </p>
+    <!-- SECCIÓN HERO -->
+    <header class="relative h-[60vh] flex flex-col justify-center items-center text-center px-6">
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop" 
+          class="w-full h-full object-cover opacity-30 grayscale blur-[1px]"
+          alt="Fondo Industrial Tesk"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#050505]/0 via-[#050505]/40 to-[#050505] z-10"></div>
       </div>
 
-      <div class="flex-1">
-        <p class="font-bold text-black mb-3 text-lg uppercase">Teléfonos</p>
-        <p class="text-gray-600 leading-normal">
-          Ventas: +58 245-5646129 <br /> 
-          Soporte: +58 245-5646129
-        </p>
+      <div class="relative z-20 animate-fade-in">
+        <p class="text-[#ffcc00] font-black uppercase tracking-[0.5em] text-[10px] mb-4 drop-shadow-[0_0_10px_rgba(255,204,0,0.4)]">Guacara • Venezuela</p>
+        <h1 class="text-6xl md:text-[115px] font-black uppercase italic leading-[0.85] tracking-tighter">
+          TESK <br /> 
+          <span class="text-[#ffcc00] not-italic drop-shadow-[0_0_40px_rgba(255,204,0,0.6)]">SUMINISTROS</span>
+        </h1>
+      </div>
+    </header>
+
+    <section class="max-w-6xl mx-auto px-6 pb-20 relative z-20">
+      <!-- CAJAS DE INFORMACIÓN -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 -mt-10 md:-mt-14">
+        
+        <!-- Ubicación -->
+        <div class="group bg-[#0a0a0a]/90 backdrop-blur-md border border-[#ffcc00]/10 p-8 rounded-2xl transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] hover:border-[#ffcc00]/40">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#ffcc00]/5 mb-6 shadow-[0_0_15px_rgba(255,204,0,0.1)] group-hover:bg-[#ffcc00]/20 transition-all">
+            <Icon name="lucide:map-pin" class="text-[#ffcc00] drop-shadow-[0_0_10px_#ffcc00]" size={24} />
+          </div>
+          <h3 class="text-white/20 font-black text-[9px] uppercase tracking-[0.4em] mb-2">Ubicación</h3>
+          <p class="text-3xl font-black italic uppercase tracking-tighter mb-1">Guacara</p>
+          <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Carabobo, Venezuela.</p>
+        </div>
+
+        <!-- Líneas Directas -->
+        <div class="group bg-[#0a0a0a]/90 backdrop-blur-md border border-[#ffcc00]/10 p-8 rounded-2xl transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] hover:border-[#ffcc00]/40">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#ffcc00]/5 mb-6 shadow-[0_0_15px_rgba(255,204,0,0.1)] group-hover:bg-[#ffcc00]/20 transition-all">
+            <Icon name="lucide:phone" class="text-[#ffcc00] drop-shadow-[0_0_10px_#ffcc00]" size={24} />
+          </div>
+          <h3 class="text-white/20 font-black text-[9px] uppercase tracking-[0.4em] mb-2">Líneas Directas</h3>
+          <p class="text-2xl font-black tracking-tighter text-white group-hover:text-[#ffcc00] transition-colors">+58 245-5646129</p>
+          <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Atención al cliente</p>
+        </div>
+
+        <!-- Horarios -->
+        <div class="group bg-[#0a0a0a]/90 backdrop-blur-md border border-[#ffcc00]/10 p-8 rounded-2xl transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] hover:border-[#ffcc00]/40">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-[#ffcc00]/5 mb-6 shadow-[0_0_15px_rgba(255,204,0,0.1)] group-hover:bg-[#ffcc00]/20 transition-all">
+            <Icon name="lucide:clock" class="text-[#ffcc00] drop-shadow-[0_0_10px_#ffcc00]" size={24} />
+          </div>
+          <h3 class="text-white/20 font-black text-[9px] uppercase tracking-[0.4em] mb-2">Atención</h3>
+          <p class="text-3xl font-black italic uppercase tracking-tighter mb-1">Lun — Sáb</p>
+          <p class="text-sm font-bold text-[#ffcc00]/80 tracking-tight">09:00 AM — 06:00 PM</p>
+        </div>
       </div>
 
-      <div class="flex-1">
-        <p class="font-bold text-black mb-3 text-lg uppercase">Horarios</p>
-        <p class="text-gray-600 leading-normal">
-          Lunes a Sábado <br /> 
-          9:00 AM - 6:00 PM
-        </p>
-      </div>
+      <!-- BOTONES RRSS -->
+      <div class="mt-8 flex flex-col md:flex-row gap-5 max-w-4xl mx-auto">
+        
+        <!-- WHATSAPP -->
+        <a href="https://wa.me/582455646129" target="_blank" 
+           class="group relative flex-1 flex items-center justify-center gap-5 bg-[#25D366] text-white py-6 px-8 rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.04] shadow-[0_0_30px_rgba(37,211,102,0.3)] hover:shadow-[0_0_50px_rgba(37,211,102,0.6)] active:translate-y-1">
+          
+          <svg viewBox="0 0 24 24" class="w-10 h-10 fill-current relative z-10">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          
+          <div class="flex flex-col relative z-10 text-left">
+            <span class="text-[9px] font-black uppercase tracking-[0.3em] leading-none mb-1 text-white/90">Canal de ventas</span>
+            <span class="text-3xl font-black uppercase italic leading-none tracking-tighter">WhatsApp</span>
+          </div>
 
-    </div>
-  </section>
+          <div class="absolute top-0 -inset-full h-full w-1/2 z-20 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-shine"></div>
+        </a>
+
+        <!-- INSTAGRAM (Enlace corregido) -->
+        <a href="https://www.instagram.com/tesksuministros?igsh=MWcwMXl3c2plbWJ5ZQ==" target="_blank" 
+           class="group relative flex-1 flex items-center justify-center gap-5 bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#bc1888] text-white py-6 px-8 rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.04] shadow-[0_0_30px_rgba(230,104,60,0.3)] hover:shadow-[0_0_50px_rgba(230,104,60,0.6)] active:translate-y-1">
+          
+          <Icon name="lucide:instagram" class="w-10 h-10 relative z-10 text-white" />
+          
+          <div class="flex flex-col relative z-10 text-left">
+            <span class="text-[9px] font-black uppercase tracking-[0.3em] leading-none mb-1 text-white/90">Catálogo oficial</span>
+            <span class="text-3xl font-black uppercase italic leading-none tracking-tighter">Instagram</span>
+          </div>
+
+          <div class="absolute top-0 -inset-full h-full w-1/2 z-20 block transform -skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-shine"></div>
+        </a>
+
+      </div>
+    </section>
+
+    <footer class="py-10 text-center text-[9px] text-gray-800 font-black uppercase tracking-[0.6em] border-t border-white/5 relative z-20 bg-[#050505]">
+      Suministros Tesk © 2026 • Valencia, Carabobo
+    </footer>
+  </main>
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+  
+  .font-archivo {
+    font-family: 'Archivo Black', sans-serif;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes shine {
+    from { left: -100%; }
+    to { left: 200%; }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .group-hover\:animate-shine {
+    animation: shine 1.1s ease-in-out forwards;
+  }
+</style>

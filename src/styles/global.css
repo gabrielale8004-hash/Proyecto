@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+  --font-archivo: "Archivo", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --color-tesk: #E2E61B;
+}
+
+/* Configuraciones base opcionales */
+@layer base {
+  html {
+    @apply bg-[#050505] antialiased;
+    scroll-behavior: smooth;
+  }
+}
