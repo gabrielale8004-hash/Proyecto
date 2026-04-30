@@ -13,72 +13,69 @@ const { title } = Astro.props;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Suministros Tesk</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,900;1,900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   </head>
   <body class="bg-[#050505] text-white font-['Inter'] antialiased">
     
-    <!-- NAVBAR CON LOGO IMPACTANTE A LA IZQUIERDA -->
-    <header class="fixed top-0 left-0 w-full z-[100] border-b border-white/5 bg-black/80 backdrop-blur-md">
-      <!-- Línea de luz superior en tono Dorado -->
-      <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-[#D4AF37] via-[#FFD700] to-transparent opacity-50"></div>
+    <header class="fixed top-0 left-0 w-full z-[100] border-b border-white/10 bg-black/90 backdrop-blur-xl">
+      <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#FFD700] to-transparent opacity-70"></div>
       
-      <nav class="max-w-[1400px] mx-auto px-4 h-[80px] flex justify-between items-center">
+      <nav class="max-w-[1400px] mx-auto px-6 h-[90px] flex justify-between items-center">
         
-        <!-- LOGO MÁS GRANDE Y PEGADO A LA IZQUIERDA -->
+        <!-- LOGO POTENCIADO -->
         <a href="/" class="flex flex-col group transition-all duration-300 active:scale-95">
-          <span class="text-[#FFD700] font-['Archivo'] font-black text-4xl uppercase italic leading-[0.8] tracking-tighter drop-shadow-[0_0_15px_rgba(255,215,0,0.4)] group-hover:drop-shadow-[0_0_20px_rgba(255,215,0,0.6)] transition-all">
+          <span class="text-[#FFD700] font-['Archivo'] font-black text-4xl md:text-5xl uppercase italic leading-[0.8] tracking-tighter drop-shadow-[0_0_25px_rgba(255,204,0,0.8)] group-hover:drop-shadow-[0_0_35px_rgba(255,204,0,1)] transition-all">
             TESK
           </span>
-          <span class="text-white font-black text-[10px] uppercase tracking-[0.6em] mt-1 opacity-100 group-hover:text-[#FFD700] transition-colors">
+          <span class="text-white font-black text-[11px] uppercase tracking-[0.55em] mt-1.5 opacity-100 group-hover:text-[#FFD700] transition-colors drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
             SUMINISTROS
           </span>
         </a>
 
-        <!-- MENÚ CENTRAL REFINADO -->
+        <!-- MENÚ CENTRAL (Limpio y brillante) -->
         <div class="hidden md:flex items-center gap-12">
-          <div class="flex flex-col items-center group cursor-pointer">
-            <span class="text-[7px] text-[#FFD700] font-black tracking-widest opacity-0 group-hover:opacity-100 transition-all mb-0.5 italic">0.1</span>
-            <a href="/" class="nav-link">Inicio</a>
-          </div>
-          <div class="flex flex-col items-center group cursor-pointer">
-            <span class="text-[7px] text-[#FFD700] font-black tracking-widest opacity-0 group-hover:opacity-100 transition-all mb-0.5 italic">0.2</span>
-            <a href="/products" class="nav-link">Productos</a>
-          </div>
-          <div class="flex flex-col items-center group cursor-pointer">
-            <span class="text-[7px] text-[#FFD700] font-black tracking-widest opacity-0 group-hover:opacity-100 transition-all mb-0.5 italic">0.3</span>
-            <a href="/contacts" class="nav-link">Contacto</a>
-          </div>
+          <a href="/" class="nav-link">Inicio</a>
+          <a href="/products" class="nav-link">Productos</a>
+          <a href="/contacts" class="nav-link">Contacto</a>
         </div>
 
         <!-- STATUS INDUSTRIAL -->
-        <div class="flex items-center gap-4 border-l border-white/10 pl-6 h-10">
+        <div class="hidden sm:flex items-center gap-4 border-l border-white/10 pl-6 h-10">
            <div class="flex flex-col items-end leading-none">
-              <span class="text-[#FFD700] text-[8px] font-black uppercase tracking-widest mb-1">Status: Online</span>
+              <span class="text-[#FFD700] text-[8px] font-black uppercase tracking-widest mb-1 drop-shadow-[0_0_5px_rgba(255,204,0,0.5)]">Status: Online</span>
               <span class="text-white/40 text-[10px] font-bold uppercase tracking-tighter italic">Valencia, VZLA</span>
            </div>
-           <div class="w-2 h-2 rounded-full bg-[#FFD700] shadow-[0_0_10px_#FFD700] animate-pulse"></div>
+           <div class="w-2.5 h-2.5 rounded-full bg-[#FFD700] shadow-[0_0_15px_#FFD700] animate-pulse"></div>
         </div>
+
+        <button id="menu-btn" class="md:hidden text-[#FFD700] p-2 hover:scale-110 transition-transform">
+          <Icon name="lucide:menu" size={36} class="drop-shadow-[0_0_10px_rgba(255,204,0,0.5)]" />
+        </button>
       </nav>
+
+      <!-- MENÚ DESPLEGABLE MÓVIL -->
+      <div id="mobile-menu" class="hidden md:hidden bg-black/98 border-b border-[#FFD700]/20 w-full flex flex-col items-center py-12 gap-8 animate-fade-in shadow-[0_20px_50px_rgba(0,0,0,0.9)]">
+        <a href="/" class="text-lg font-black uppercase tracking-[0.4em] text-[#FFD700] drop-shadow-[0_0_10px_rgba(255,204,0,0.4)]">Inicio</a>
+        <a href="/products" class="text-lg font-black uppercase tracking-[0.4em] text-white hover:text-[#FFD700] transition-colors">Productos</a>
+        <a href="/contacts" class="text-lg font-black uppercase tracking-[0.4em] text-white hover:text-[#FFD700] transition-colors">Contacto</a>
+      </div>
     </header>
 
-    <div class="h-[80px]"></div>
+    <div class="h-[90px]"></div>
 
     <main>
       <slot />
     </main>
 
-    <!-- FOOTER CON LOGO GIGANTE Y TONO DORADO -->
-    <footer class="relative bg-[#050505] pt-20 pb-10 px-6 border-t border-white/5 overflow-hidden">
+    <footer class="relative bg-[#050505] pt-24 pb-10 px-6 border-t border-white/5 overflow-hidden">
       <div class="max-w-[1400px] mx-auto relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
-          
-          <!-- BRANDING DORADO REFORZADO -->
           <div class="space-y-6">
             <div class="flex flex-col">
-              <h2 class="text-[#FFD700] font-['Archivo'] font-black text-6xl uppercase italic leading-[0.75] tracking-tighter drop-shadow-[0_0_20px_rgba(255,215,0,0.3)]">
+              <h2 class="text-[#FFD700] font-['Archivo'] font-black text-7xl uppercase italic leading-[0.75] tracking-tighter drop-shadow-[0_0_30px_rgba(255,204,0,0.4)]">
                 TESK
               </h2>
               <h2 class="text-white font-['Archivo'] font-black text-4xl uppercase leading-none tracking-tighter italic">
@@ -91,7 +88,6 @@ const { title } = Astro.props;
             </div>
           </div>
 
-          <!-- INFORMACIÓN -->
           <div class="space-y-8 md:border-l border-white/5 md:pl-16">
             <div>
               <span class="text-[#FFD700] font-black text-[10px] uppercase tracking-[0.5em] block mb-3 italic">Ubicación</span>
@@ -105,57 +101,56 @@ const { title } = Astro.props;
             </div>
           </div>
 
-          <!-- REDES SOCIALES -->
           <div class="flex flex-col lg:items-end gap-8">
             <span class="text-white/20 font-black text-[10px] uppercase tracking-[0.6em] italic border-b border-[#FFD700]/30 pb-2">Conecta con nosotros</span>
             <div class="flex gap-5">
-              
-              <a href="https://instagram.com/tesksuministros" target="_blank" 
-                 class="p-4 border border-white/10 rounded-2xl bg-white/[0.02] hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] transition-all duration-300 group">
+              <a href="https://instagram.com/tesksuministros" target="_blank" class="p-4 border border-white/10 rounded-2xl bg-white/[0.02] hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] transition-all duration-300 group shadow-lg hover:shadow-pink-500/20">
                 <Icon name="lucide:instagram" size={24} class="text-[#ee2a7b] group-hover:text-white transition-all scale-110" />
               </a>
-
-              <a href="https://wa.me/582455646129" target="_blank" 
-                 class="p-4 border border-white/10 rounded-2xl bg-white/[0.02] hover:bg-[#25D366] transition-all duration-300 group">
+              <a href="https://wa.me/582455646129" target="_blank" class="p-4 border border-white/10 rounded-2xl bg-white/[0.02] hover:bg-[#25D366] transition-all duration-300 group shadow-lg hover:shadow-green-500/20">
                 <Icon name="lucide:message-circle-more" size={24} class="text-[#25D366] group-hover:text-white transition-all scale-110" />
               </a>
-
             </div>
           </div>
-
         </div>
-
         <div class="mt-20 pt-8 border-t border-white/5 flex justify-center">
           <span class="text-[9px] font-black uppercase tracking-[0.7em] text-white/20 italic">© 2026 TESK SUMINISTROS C.A.</span>
         </div>
       </div>
     </footer>
 
+    <script>
+      const btn = document.getElementById('menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      btn?.addEventListener('click', () => {
+        menu?.classList.toggle('hidden');
+      });
+    </script>
+
     <style is:global>
       @reference "../styles/global.css";
 
-      .nav-link {
-        @apply text-[11px] font-black uppercase tracking-[0.5em] text-white/40 hover:text-[#FFD700] transition-all duration-300 relative;
+      .nav-link { 
+        @apply text-[12px] font-black uppercase tracking-[0.4em] text-white transition-all duration-300 relative drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]; 
       }
-      
-      .nav-link::after {
-        content: '';
-        @apply absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-[#FFD700] transition-all duration-300 shadow-[0_0_10px_#FFD700];
+      .nav-link::after { 
+        content: ''; 
+        @apply absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-[#FFD700] transition-all duration-300 shadow-[0_0_15px_#FFD700]; 
       }
-      
-      .nav-link:hover::after {
-        @apply w-full;
+      .nav-link:hover { 
+        @apply text-[#FFD700] drop-shadow-[0_0_12px_rgba(255,204,0,0.6)]; 
       }
+      .nav-link:hover::after { @apply w-full; }
 
-      html { 
-        background: #050505; 
-        -webkit-font-smoothing: antialiased; 
-        scroll-behavior: smooth;
-      }
+      html { background: #050505; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+      body { margin: 0; }
       
-      body { 
-        margin: 0; 
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-15px); }
+        to { opacity: 1; transform: translateY(0); }
       }
+      .animate-fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
     </style>
   </body>
 </html>
