@@ -5,6 +5,8 @@ const fondoImagen = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d
 
 const rutaPdf = "/productos/CATALOGO_TESK.pdf";
 const nombreDescarga = "Catalogo_Tesk_2026.pdf";
+// MEJORA: Constante para actualizar el peso fácilmente
+const pesoArchivo = "64.2 MB"; 
 ---
 
 <Layout title="Descarga de Catálogo | Suministros Tesk">
@@ -50,7 +52,8 @@ const nombreDescarga = "Catalogo_Tesk_2026.pdf";
             <div class="flex items-center justify-center md:justify-start gap-4 pt-2">
                 <span class="text-[#FFD700] font-mono text-[10px] md:text-xs font-bold uppercase tracking-widest">PDF</span>
                 <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
-                <span class="text-white/60 font-mono text-[10px] md:text-xs uppercase tracking-widest">48.5 MB</span>
+                <!-- Aplicamos la constante aquí -->
+                <span class="text-white/60 font-mono text-[10px] md:text-xs uppercase tracking-widest">{pesoArchivo}</span>
             </div>
           </div>
 
@@ -74,33 +77,3 @@ const nombreDescarga = "Catalogo_Tesk_2026.pdf";
     </section>
   </main>
 </Layout>
-
-<style>
-  .animate-subtle-zoom {
-    animation: subtle-zoom 20s infinite alternate;
-    will-change: transform;
-  }
-  
-  @keyframes subtle-zoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
-  }
-
-  .animate-reveal-up {
-    animation: reveal-up 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  }
-
-  .animate-reveal-up-delayed {
-    opacity: 0;
-    animation: reveal-up 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
-  }
-
-  @keyframes reveal-up {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  h1, h3 {
-    content-visibility: auto;
-  }
-</style>

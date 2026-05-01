@@ -1,0 +1,110 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const requisitos = [
+  { icon: "lucide:file-check-2", title: "REGISTRO MERCANTIL", desc: "COPIA LEGAL LEGIBLE Y DEBIDAMENTE CERTIFICADA" },
+  { icon: "lucide:fingerprint", title: "RIF JURÍDICO", desc: "COMPROBANTE DIGITAL VIGENTE Y ACTUALIZADO" },
+  { icon: "lucide:landmark", title: "REFERENCIAS", desc: "DOS COMERCIALES Y UNA BANCARIA RECIENTE" },
+  { icon: "lucide:shield-check", title: "IDENTIFICACIÓN", desc: "CÉDULA DE IDENTIDAD DE LOS REPRESENTANTES" }
+];
+---
+
+<Layout title="Requisitos de Apertura | Suministros Tesk">
+  <main class="min-h-screen w-full bg-[#020202] flex items-center justify-center p-6 md:p-16 relative overflow-hidden selection:bg-[#FFD700] selection:text-black">
+    
+    <!-- FONDO DE MALLA INDUSTRIAL -->
+    <div class="absolute inset-0 z-0 opacity-30">
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#020202] via-transparent to-[#020202]"></div>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL: Máximo ancho para impacto visual -->
+    <div class="relative z-10 w-full max-w-[1440px] space-y-12">
+      
+      <!-- ENCABEZADO TIPO TERMINAL -->
+      <header class="space-y-4 border-l-2 border-[#FFD700] pl-10">
+        <div class="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.5em]">
+          <span class="text-[#FFD700]">Suministros Tesk</span>
+          <span class="text-white/20">/</span>
+          <span class="text-white/40">Valencia • Guacara</span>
+        </div>
+        <h1 class="text-7xl md:text-9xl font-black text-white italic leading-[0.75] uppercase tracking-tighter">
+          REQUISITOS <br/>
+          <span class="text-transparent" style="-webkit-text-stroke: 1.5px #FFD700;">DE APERTURA</span>
+        </h1>
+      </header>
+
+      <!-- SECCIÓN DE CARDS: Diseño limpio y horizontal -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {requisitos.map((item, index) => (
+          <div class="group relative bg-white/[0.02] hover:bg-white/[0.04] border border-white/5 p-10 rounded-[2.5rem] transition-all duration-500 flex flex-col md:flex-row md:items-center gap-8">
+            <!-- Icono con Brillo -->
+            <div class="shrink-0 w-20 h-20 bg-[#0A0A0A] border border-white/10 rounded-2xl flex items-center justify-center shadow-2xl group-hover:border-[#FFD700]/50 transition-colors">
+              <Icon name={item.icon} class="w-10 h-10 text-[#FFD700]" />
+            </div>
+
+            <!-- Información -->
+            <div class="space-y-2">
+              <div class="flex items-center gap-3">
+                <span class="text-[#FFD700] text-[10px] font-black tracking-[0.3em]">PASO 0{index + 1}</span>
+                <span class="h-px w-6 bg-white/10"></span>
+                <span class="text-white/20 text-[9px] font-black uppercase">Obligatorio</span>
+              </div>
+              <h2 class="text-white font-black text-2xl md:text-3xl uppercase italic tracking-tighter">{item.title}</h2>
+              <p class="text-white/40 text-[10px] font-bold uppercase tracking-widest leading-relaxed max-w-sm">
+                {item.desc}
+              </p>
+            </div>
+
+            <!-- Decoración de fondo -->
+            <div class="absolute top-8 right-10 text-white/[0.02] font-black text-7xl italic select-none">0{index + 1}</div>
+          </div>
+        ))}
+      </div>
+
+      <!-- BANNER DE ACCIÓN: Más integrado y moderno -->
+      <div class="relative overflow-hidden rounded-[3rem] bg-[#FFD700] p-1 shadow-[0_40px_80px_-20px_rgba(255,215,0,0.25)] group">
+        <div class="bg-[#020202] rounded-[2.8rem] p-10 md:px-16 flex flex-col md:flex-row items-center justify-between gap-10">
+          <div class="space-y-3 text-center md:text-left">
+            <h3 class="text-white font-black text-3xl md:text-4xl italic uppercase tracking-tighter leading-none">
+              ¿TIENE LA CARPETA LISTA?
+            </h3>
+            <p class="text-white/30 text-[11px] font-bold uppercase tracking-[0.4em]">
+              Siga al registro para procesar su solicitud en <span class="text-[#FFD700]">72 horas</span>
+            </p>
+          </div>
+
+          <button class="relative bg-[#FFD700] text-black px-14 py-6 rounded-2xl font-black text-[11px] uppercase tracking-[0.5em] hover:scale-105 active:scale-95 transition-all overflow-hidden group/btn">
+            <span class="relative z-10">Iniciar Registro</span>
+            <div class="absolute inset-0 bg-white translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LUCES DE AMBIENTE -->
+    <div class="absolute -top-40 -left-40 w-[600px] h-[600px] bg-[#FFD700]/5 rounded-full blur-[150px]"></div>
+    <div class="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-[#FFD700]/5 rounded-full blur-[150px]"></div>
+  </main>
+</Layout>
+
+<style is:global>
+  @reference "tailwindcss";
+
+  body {
+    background-color: #020202;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Suavizado de carga */
+  .z-10 {
+    animation: reveal 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  }
+
+  @keyframes reveal {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
