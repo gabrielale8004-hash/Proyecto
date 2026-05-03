@@ -1,110 +1,191 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon/components";
-
-const requisitos = [
-  { icon: "lucide:file-check-2", title: "REGISTRO MERCANTIL", desc: "COPIA LEGAL LEGIBLE Y DEBIDAMENTE CERTIFICADA" },
-  { icon: "lucide:fingerprint", title: "RIF JURÍDICO", desc: "COMPROBANTE DIGITAL VIGENTE Y ACTUALIZADO" },
-  { icon: "lucide:landmark", title: "REFERENCIAS", desc: "DOS COMERCIALES Y UNA BANCARIA RECIENTE" },
-  { icon: "lucide:shield-check", title: "IDENTIFICACIÓN", desc: "CÉDULA DE IDENTIDAD DE LOS REPRESENTANTES" }
-];
 ---
 
-<Layout title="Requisitos de Apertura | Suministros Tesk">
-  <main class="min-h-screen w-full bg-[#020202] flex items-center justify-center p-6 md:p-16 relative overflow-hidden selection:bg-[#FFD700] selection:text-black">
+<Layout title="Crédito Corporativo | Tesk">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+  
+  <style>
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(40px); filter: blur(20px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+
+    @keyframes pulse-bg {
+      0%, 100% { opacity: 0.1; transform: scale(1); }
+      50% { opacity: 0.15; transform: scale(1.05); }
+    }
+
+    .animate-reveal {
+      animation: reveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+
+    .hero-title {
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+    }
+
+    .italic-fix {
+      display: inline-block;
+      padding-right: 0.2em;
+      overflow: visible;
+    }
+
+    .glass-panel {
+      background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+      backdrop-filter: blur(25px);
+      border: 1px solid rgba(212,175,55,0.1);
+    }
+
+    .card-glow:hover {
+      box-shadow: 0 0 60px rgba(212,175,55,0.05);
+      border-color: rgba(212,175,55,0.3);
+    }
+
+    input:-webkit-autofill {
+      -webkit-text-fill-color: white !important;
+      -webkit-box-shadow: 0 0 0px 1000px #080808 inset !important;
+    }
+  </style>
+
+  <div class="min-h-screen bg-[#020202] text-zinc-300 font-['Inter'] antialiased selection:bg-[#D4AF37]/30 relative overflow-x-hidden">
     
-    <!-- FONDO DE MALLA INDUSTRIAL -->
-    <div class="absolute inset-0 z-0 opacity-30">
-      <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#020202] via-transparent to-[#020202]"></div>
+    <!-- FONDO -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000" 
+        class="w-full h-full object-cover grayscale opacity-10" 
+        style="animation: pulse-bg 12s infinite ease-in-out;"
+        alt="Industrial Background"
+      />
+      <div class="absolute inset-0 bg-gradient-to-tr from-[#020202] via-[#020202]/95 to-transparent"></div>
     </div>
 
-    <!-- CONTENEDOR PRINCIPAL: Máximo ancho para impacto visual -->
-    <div class="relative z-10 w-full max-w-[1440px] space-y-12">
+    <!-- MAIN CONTAINER -->
+    <main class="relative z-10 max-w-[1300px] mx-auto px-6 pt-32 md:pt-40 pb-24">
       
-      <!-- ENCABEZADO TIPO TERMINAL -->
-      <header class="space-y-4 border-l-2 border-[#FFD700] pl-10">
-        <div class="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.5em]">
-          <span class="text-[#FFD700]">Suministros Tesk</span>
-          <span class="text-white/20">/</span>
-          <span class="text-white/40">Valencia • Guacara</span>
+      <!-- BOTÓN VOLVER A REQUISITOS -->
+      <div class="absolute top-12 left-6 md:left-10">
+        <a href="/requisitos" class="group inline-flex items-center gap-4 bg-black/40 backdrop-blur-xl border border-white/5 p-2 pr-6 rounded-full hover:border-[#D4AF37]/50 hover:bg-black/60 transition-all duration-500 animate-reveal" style="animation-delay: 0.2s">
+          <div class="w-10 h-10 rounded-full bg-[#D4AF37] flex items-center justify-center text-black shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+            <span class="material-symbols-outlined text-xl font-light">list_alt</span>
+          </div>
+          <div class="flex flex-col">
+              <span class="text-[9px] uppercase tracking-[0.2em] text-zinc-500 font-black leading-none">Consultar</span>
+              <span class="text-[11px] font-bold text-white uppercase tracking-wider">Requisitos</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- HERO SECTION -->
+      <header class="max-w-5xl mb-12 md:mb-16 animate-reveal" style="animation-delay: 0.4s">
+        <div class="flex items-center gap-4 mb-6 md:mb-10">
+            <div class="h-[1px] w-10 bg-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.8)]"></div>
+            <span class="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.6em]">Financiamiento Industrial</span>
         </div>
-        <h1 class="text-7xl md:text-9xl font-black text-white italic leading-[0.75] uppercase tracking-tighter">
-          REQUISITOS <br/>
-          <span class="text-transparent" style="-webkit-text-stroke: 1.5px #FFD700;">DE APERTURA</span>
+        
+        <h1 class="hero-title text-6xl md:text-[120px] font-normal text-white tracking-tighter">
+          Apertura de <br/>
+          <span class="italic-fix font-black italic text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-zinc-600">
+            Cuenta Comercial
+          </span>
         </h1>
       </header>
 
-      <!-- SECCIÓN DE CARDS: Diseño limpio y horizontal -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {requisitos.map((item, index) => (
-          <div class="group relative bg-white/[0.02] hover:bg-white/[0.04] border border-white/5 p-10 rounded-[2.5rem] transition-all duration-500 flex flex-col md:flex-row md:items-center gap-8">
-            <!-- Icono con Brillo -->
-            <div class="shrink-0 w-20 h-20 bg-[#0A0A0A] border border-white/10 rounded-2xl flex items-center justify-center shadow-2xl group-hover:border-[#FFD700]/50 transition-colors">
-              <Icon name={item.icon} class="w-10 h-10 text-[#FFD700]" />
-            </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- FORMULARIO -->
+        <div class="lg:col-span-8 animate-reveal" style="animation-delay: 0.6s">
+          <div class="glass-panel card-glow rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-14 relative group overflow-hidden transition-all duration-700">
+            
+            <div class="absolute -top-24 -left-24 w-64 h-64 bg-[#D4AF37]/5 blur-[100px] group-hover:bg-[#D4AF37]/10 transition-colors"></div>
 
-            <!-- Información -->
-            <div class="space-y-2">
-              <div class="flex items-center gap-3">
-                <span class="text-[#FFD700] text-[10px] font-black tracking-[0.3em]">PASO 0{index + 1}</span>
-                <span class="h-px w-6 bg-white/10"></span>
-                <span class="text-white/20 text-[9px] font-black uppercase">Obligatorio</span>
+            <form id="creditForm" class="space-y-12 relative z-10">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+                <div class="group/field space-y-4">
+                  <label class="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-black group-focus-within/field:text-[#D4AF37] transition-colors">Razón Social</label>
+                  <input name="razon_social" id="razon_social" required type="text" placeholder="Nombre legal de la empresa" 
+                    class="w-full bg-transparent border-b border-white/10 py-4 text-white text-lg outline-none focus:border-[#D4AF37] transition-all placeholder:text-zinc-800" />
+                </div>
+                <div class="group/field space-y-4">
+                  <label class="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-black group-focus-within/field:text-[#D4AF37] transition-colors">RIF Jurídico</label>
+                  <input name="rif" id="rif" required type="text" placeholder="J-00000000-0" 
+                    class="w-full bg-transparent border-b border-white/10 py-4 text-white text-lg outline-none focus:border-[#D4AF37] transition-all placeholder:text-zinc-800" />
+                </div>
               </div>
-              <h2 class="text-white font-black text-2xl md:text-3xl uppercase italic tracking-tighter">{item.title}</h2>
-              <p class="text-white/40 text-[10px] font-bold uppercase tracking-widest leading-relaxed max-w-sm">
-                {item.desc}
-              </p>
-            </div>
 
-            <!-- Decoración de fondo -->
-            <div class="absolute top-8 right-10 text-white/[0.02] font-black text-7xl italic select-none">0{index + 1}</div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+                <div class="group/field space-y-4">
+                  <label class="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-black group-focus-within/field:text-[#D4AF37] transition-colors">Sede Operativa</label>
+                  <input name="sede" id="sede" required type="text" placeholder="Ciudad, Estado" 
+                    class="w-full bg-transparent border-b border-white/10 py-4 text-white text-lg outline-none focus:border-[#D4AF37] transition-all placeholder:text-zinc-800" />
+                </div>
+                <div class="group/field space-y-4">
+                  <label class="text-[10px] uppercase tracking-[0.3em] text-zinc-500 font-black group-focus-within/field:text-[#D4AF37] transition-colors">Teléfono Directo</label>
+                  <input name="telefono" id="telefono" required type="tel" placeholder="+58 4XX 000 0000" 
+                    class="w-full bg-transparent border-b border-white/10 py-4 text-white text-lg outline-none focus:border-[#D4AF37] transition-all placeholder:text-zinc-800" />
+                </div>
+              </div>
+
+              <div class="pt-6">
+                <button type="submit" class="group relative flex items-center justify-between w-full md:w-auto md:min-w-[340px] bg-[#D4AF37] hover:bg-white p-2 rounded-full transition-all duration-500 shadow-[0_20px_40px_rgba(212,175,55,0.15)] active:scale-95">
+                    <span id="btnText" class="pl-10 pr-6 text-black font-black uppercase tracking-[0.2em] text-[11px]">Enviar Solicitud</span>
+                    <div class="w-14 h-14 rounded-full bg-black flex items-center justify-center text-[#D4AF37] group-hover:rotate-45 transition-transform duration-500">
+                        <span class="material-symbols-outlined text-2xl font-light">arrow_outward</span>
+                    </div>
+                </button>
+              </div>
+            </form>
           </div>
-        ))}
-      </div>
-
-      <!-- BANNER DE ACCIÓN: Más integrado y moderno -->
-      <div class="relative overflow-hidden rounded-[3rem] bg-[#FFD700] p-1 shadow-[0_40px_80px_-20px_rgba(255,215,0,0.25)] group">
-        <div class="bg-[#020202] rounded-[2.8rem] p-10 md:px-16 flex flex-col md:flex-row items-center justify-between gap-10">
-          <div class="space-y-3 text-center md:text-left">
-            <h3 class="text-white font-black text-3xl md:text-4xl italic uppercase tracking-tighter leading-none">
-              ¿TIENE LA CARPETA LISTA?
-            </h3>
-            <p class="text-white/30 text-[11px] font-bold uppercase tracking-[0.4em]">
-              Siga al registro para procesar su solicitud en <span class="text-[#FFD700]">72 horas</span>
-            </p>
-          </div>
-
-          <button class="relative bg-[#FFD700] text-black px-14 py-6 rounded-2xl font-black text-[11px] uppercase tracking-[0.5em] hover:scale-105 active:scale-95 transition-all overflow-hidden group/btn">
-            <span class="relative z-10">Iniciar Registro</span>
-            <div class="absolute inset-0 bg-white translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
-          </button>
         </div>
+
+        <!-- SIDEBAR -->
+        <aside class="lg:col-span-4 space-y-12 lg:pt-10 animate-reveal" style="animation-delay: 0.8s">
+            <div class="relative pl-10 border-l border-white/10 group">
+                <div class="absolute -left-[5px] top-0 w-[10px] h-[10px] rounded-full bg-[#D4AF37] shadow-[0_0_15px_#D4AF37]"></div>
+                <h4 class="text-white text-[11px] font-black uppercase tracking-[0.4em] mb-4">Registro Corporativo</h4>
+                <p class="text-sm text-zinc-500 leading-relaxed font-medium">Carga de datos fiscales para la apertura de cuenta bajo estándares industriales internacionales.</p>
+            </div>
+            <div class="relative pl-10 border-l border-white/10 group">
+                <div class="absolute -left-[5px] top-0 w-[10px] h-[10px] rounded-full bg-zinc-800 group-hover:bg-[#D4AF37] transition-colors"></div>
+                <h4 class="text-zinc-600 text-[11px] font-black uppercase tracking-[0.4em] mb-4 group-hover:text-white transition-colors">Validación Directa</h4>
+                <p class="text-sm text-zinc-600 leading-relaxed font-light">Verificación de credenciales mercantiles y contacto inmediato para confirmación.</p>
+            </div>
+        </aside>
       </div>
+    </main>
 
-    </div>
-
-    <!-- LUCES DE AMBIENTE -->
-    <div class="absolute -top-40 -left-40 w-[600px] h-[600px] bg-[#FFD700]/5 rounded-full blur-[150px]"></div>
-    <div class="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-[#FFD700]/5 rounded-full blur-[150px]"></div>
-  </main>
+    <footer class="relative z-10 max-w-[1300px] mx-auto px-6 py-12 border-t border-white/5 flex justify-between items-center opacity-30 animate-reveal" style="animation-delay: 1s">
+        <span class="text-[9px] font-black uppercase tracking-[0.5em]">Suministros Tesk © 2026</span>
+        <div class="flex gap-10">
+            <span class="text-[9px] font-black uppercase tracking-[0.5em]">Valencia</span>
+            <span class="text-[9px] font-black uppercase tracking-[0.5em]">Venezuela</span>
+        </div>
+    </footer>
+  </div>
 </Layout>
 
-<style is:global>
-  @reference "tailwindcss";
+<script>
+  const form = document.getElementById('creditForm') as HTMLFormElement;
+  const btnText = document.getElementById('btnText') as HTMLElement;
 
-  body {
-    background-color: #020202;
-    font-family: 'Inter', sans-serif;
-  }
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (btnText) btnText.innerText = "Procesando...";
 
-  /* Suavizado de carga */
-  .z-10 {
-    animation: reveal 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-  }
+    const razon = (document.getElementById('razon_social') as HTMLInputElement).value;
+    const rif = (document.getElementById('rif') as HTMLInputElement).value;
+    const sede = (document.getElementById('sede') as HTMLInputElement).value;
+    const tlf = (document.getElementById('telefono') as HTMLInputElement).value;
 
-  @keyframes reveal {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
+    const msg = `*SOLICITUD DE CUENTA COMERCIAL*%0A%0A*Empresa:* ${razon}%0A*RIF:* ${rif}%0A*Sede:* ${sede}%0A*Tlf:* ${tlf}`;
+    
+    setTimeout(() => {
+      window.open(`https://wa.me/582455646129?text=${msg}`, '_blank');
+      if (btnText) btnText.innerText = "Enviado Correctamente";
+      form.reset();
+    }, 1200);
+  });
+</script>
